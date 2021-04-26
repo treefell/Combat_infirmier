@@ -20,16 +20,16 @@ public class Idle : MovementState
             switch (playerBase.direction)
             {
                 case 4:
-                    playerBase.myAnimator.Play("Base Layer.IdleL");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("IdleL"));
                     break;
                 case 6:
-                    playerBase.myAnimator.Play("Base Layer.IdleR");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("IdleR"));
                     break;
                 case 2:
-                    playerBase.myAnimator.Play("Base Layer.IdleD");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("IdleD"));
                     break;
                 case 8:
-                    playerBase.myAnimator.Play("Base Layer.IdleU");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("IdleU"));
                     break;
 
             }
@@ -59,35 +59,8 @@ public class Idle : MovementState
     void CheckInputs()
     {
 
-
-        if (Input.GetButtonDown(playerBase.GetButtonName("RB")))
-        {
-            Attack(baseAttack);
-            return;
-        }
-        else if (/*Input.GetAxis(playerBase.GetButtonName("LTrigger")) >= 0.5f*/Input.GetButtonDown(playerBase.GetButtonName("Y")) && playerBase is Nurse && playerBase.canRez)
-        {
-            Combine();
-            return;
-        }
-        else if (Input.GetButtonDown(playerBase.GetButtonName("LB")))
-        {
-            Dodge();
-            return;
-        }
-        else if (Input.GetAxis(playerBase.GetButtonName("RTrigger")) >= 0.5f && playerBase is Nurse)
-        {
-            Debug.Log((playerBase as Nurse).canInject);
-            if ((playerBase as Nurse).canGrab)
-            {
-                (playerBase as Nurse).PickUp();
-            }
-            else if ((playerBase as Nurse).canInject)
-            {
-                (playerBase as Nurse).Inject((playerBase as Nurse).heldItem.injection, (playerBase as Nurse).injectZone.GetTarget().GetComponent<PlayerBase>(), (playerBase as Nurse).injectZone);
-            }
-            
-        }
+        RunIdleInputs();
+        
         
        
         Movement();
@@ -96,6 +69,7 @@ public class Idle : MovementState
         {
             playerBase.SetMovementState(new Running(playerBase));
         }
+
         
         
     }

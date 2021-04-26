@@ -76,11 +76,20 @@ public class PlayerBase : TimeKeeper
     [HideInInspector]
     public Attack currentAttack;
 
-    
+    [HideInInspector]
+    public int tiredness = 0;
+
+    [HideInInspector]
+    public bool RTPressed = false;
+
+    private AudioSource audio;
+
+    public AudioClip punch;
 
     // Start is called before the first frame update
     void Start()
     {
+        audio = this.GetComponent<AudioSource>();
         SetMovementState(new Idle(this));
         rb = GetComponent<Rigidbody2D>();
         if (this is Nurse)
@@ -119,6 +128,7 @@ public class PlayerBase : TimeKeeper
     void Update()
     {
 
+
         if (myTime == 0)
         {
             return;
@@ -133,7 +143,12 @@ public class PlayerBase : TimeKeeper
         {
             currentMovementState.Tick();
         }
-         
+
+        if (Input.GetAxis(GetButtonName("RTrigger")) < 0.5f)
+        {
+            RTPressed = false;
+        }
+
     }
 
 
@@ -197,6 +212,7 @@ public class PlayerBase : TimeKeeper
             wasCombined = true;
         }
 
+        audio.PlayOneShot(punch);
         Hitlag();
         attacker.GetComponent<AttackManager>().Hitlag();
 
@@ -227,7 +243,7 @@ public class PlayerBase : TimeKeeper
         {
             myRezZone.gameObject.SetActive(true);
             SetMovementState(new Dead(this));
-            GameManagerPersistent.Instance.ScoreIncrement(this.gameObject);
+            GameManagerPersistent.Instance.ScoreIncrement(this.gameObject, GameManagerPersistent.Instance.deadBonus) ;
         }
         
     }
@@ -270,6 +286,7 @@ public class PlayerBase : TimeKeeper
                     niveaux[0] += 1;
                     currentAttack.cancellableFromFrame -= 2;
                     currentAttack.totalFrames -= 2;
+                    currentAttack.hits[0].damage += 1;
                 }
                 break;
             case 1:
@@ -315,6 +332,23 @@ public class PlayerBase : TimeKeeper
     public void Sabotaged()
     { 
         
+    }
+
+    public string GetAnimName(string initialAnim)
+    {
+        if (tiredness >= GameManagerPersistent.Instance.tirednessLevels.y)
+        {
+            return "Base Layer." + "Bloody" + initialAnim;
+        }
+        else if (tiredness >= GameManagerPersistent.Instance.tirednessLevels.x)
+        {
+            return "Base Layer." + "Tired" + initialAnim;
+        }
+        else
+        {
+            return "Base Layer."+initialAnim;
+        }
+
     }
 
     

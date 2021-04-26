@@ -72,6 +72,7 @@
     <Compile Include="Assets\RPGData\Items\Item.cs" />
     <Compile Include="Assets\Scripts\AIStates\AIAttack.cs" />
     <Compile Include="Assets\Scripts\MovementStates\Dodging.cs" />
+    <Compile Include="Assets\SyringeZone.cs" />
     <Compile Include="Assets\Scripts\BlockBoxBehaviour.cs" />
     <Compile Include="Assets\Scripts\AttackManager.cs" />
     <Compile Include="Assets\Scripts\HpDisplay.cs" />
@@ -102,7 +103,8 @@
     <Compile Include="Assets\Scripts\GameManagerPersistent.cs" />
     <Compile Include="Assets\Scripts\PlayerDetection.cs" />
     <Compile Include="Assets\Scripts\MovementStates\Combine.cs" />
-    <Compile Include="Assets\SyringeZone.cs" />
+    <Compile Include="Assets\Crate.cs" />
+    <Compile Include="Assets\CrateSpawn.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

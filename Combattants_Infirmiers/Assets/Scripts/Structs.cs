@@ -8,7 +8,7 @@ public enum HitboxShape { Cube, Sphere };
 public enum ColliderState { Closed, Open, Colliding };
 public enum Iris {Red, Blue, Yellow, Green, Grey};
 
-public enum Injection { Hyperactive, Hadoken, Sabotage };
+public enum Injection { Crate, Hyperactive, Hadoken, Sabotage, Heal };
 
 
 

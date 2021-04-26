@@ -49,7 +49,7 @@ public class Combine : MovementState
         }
         
 
-        if (/*Input.GetAxis(playerBase.GetButtonName("LTrigger")) < 0.5f*/Input.GetButtonUp(playerBase.GetButtonName("Y")))
+        if (Input.GetAxis(playerBase.GetButtonName("LTrigger")) < 0.5f)
         {
             Drop();
             playerBase.SetMovementState(new Idle(playerBase));
@@ -88,6 +88,7 @@ public class Combine : MovementState
     {
         if (playerBase.canDrop)
         {
+            playerBase.tiredness += 2;
             playerBase.canRez = false;
             playerBase.otherChar.GetComponent<PlayerBase>().StartHeal();
             

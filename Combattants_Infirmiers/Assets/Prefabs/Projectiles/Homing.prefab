@@ -116,8 +116,9 @@ MonoBehaviour:
   attackSign: {fileID: 0}
   canMove: 0
   initialSpeed: 15
-  duration: 4
+  duration: 3
   homing: 1
+  delayHoming: 1
   target: {fileID: 0}
   originator: {fileID: 0}
 --- !u!50 &6981738464932817133

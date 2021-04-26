@@ -87,38 +87,51 @@ public class Fighter : MonoBehaviour
         if (!playerBase.canGetHit)
         { return col; }
 
-        
+        currentHp -= damage;
+        if (currentHp > character.baseHp)
+        {
+            currentHp = character.baseHp;
+        }
+        else if (currentHp < 0)
+        {
+            currentHp = 0;
+        }
+
+
         GameObject dmg = Instantiate(dmgPopup);
         dmg.transform.position = this.transform.position + (Vector3)dmg.GetComponent<DamagePopup>().offset;
-        dmg.GetComponent<DamagePopup>().SetTxt(damage.ToString());
+        dmg.GetComponent<DamagePopup>().SetTxt(Mathf.Abs(damage).ToString());
         if (damage < 0)
         {
             dmg.GetComponent<DamagePopup>().SetColor(Color.green);
         }
-
-
-
-        currentHp -= damage;
-
-
-        if (isPlayer)
-        {
-            playerBase.GetHit(origin);
-        }
-        else if (isEnemy)
-        {
-            aiController.GetHit(origin);
-        }
-
-        if (origin.GetComponent<Projectile>() != null)
-        {
-            lastHitBy = origin.GetComponent<Projectile>().originator;
-
-        }
         else
         {
-            lastHitBy = origin;
+            if (isPlayer)
+            {
+                playerBase.GetHit(origin);
+            }
+            else if (isEnemy)
+            {
+                aiController.GetHit(origin);
+            }
+
+            if (origin.GetComponent<Projectile>() != null)
+            {
+                lastHitBy = origin.GetComponent<Projectile>().originator;
+
+            }
+            else
+            {
+                lastHitBy = origin;
+            }
         }
+
+
+        
+
+
+        
 
 
         CheckDeath();

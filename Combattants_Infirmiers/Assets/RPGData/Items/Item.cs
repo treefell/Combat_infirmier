@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     new public string name = "newItem";
     public Sprite icon;
     public Injection injection;
+
 }
 
 

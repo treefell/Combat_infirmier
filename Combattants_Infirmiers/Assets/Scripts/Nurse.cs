@@ -30,8 +30,12 @@ public class Nurse : PlayerBase
             case Injection.Sabotage:
                 target.Sabotaged();
                 break;
+            case Injection.Heal:
+                target.GetComponent<Fighter>().TakeDamage(-GameManagerPersistent.Instance.healValue, this.gameObject);
+                break;
         }
 
+        tiredness += 1;
         injectZone.gameObject.SetActive(false);
         heldItem = null;
         canInject = false;
@@ -43,10 +47,28 @@ public class Nurse : PlayerBase
     public void PickUp()
     {
         injectZone.gameObject.SetActive(true);
-        heldItem = armoire.items[(int)Random.Range(0, armoire.items.Length - 1)];
+        
+        if (heldItem == null)
+        {
+            heldItem = armoire.healItem;
+            armoire.EmptyShelf();
+        }
+        else if (heldItem.injection == Injection.Crate)
+        {
+            heldItem = armoire.items[(int)Random.Range(0, armoire.items.Length - 1)];
+            
+        }
+
+
         GameManagerPersistent.Instance.UpdateSyringe();
         canGrab = false;
         armoire.message.SetActive(false);
+    }
+
+    public void GetCrate(Item crate)
+    {
+        heldItem = crate;
+        GameManagerPersistent.Instance.UpdateSyringe();
     }
 
 }

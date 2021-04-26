@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sabotage
   icon: {fileID: 21300000, guid: 0e3ad790665901c4a849d7c16392b771, type: 3}
-  injection: 2
+  injection: 3

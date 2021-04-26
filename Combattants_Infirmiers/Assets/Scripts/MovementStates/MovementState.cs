@@ -131,7 +131,41 @@ public abstract class MovementState
 
     }
 
+    public void RunIdleInputs()
+    {
+        if (Input.GetButtonDown(playerBase.GetButtonName("RB")))
+        {
+            Attack(baseAttack);
+            return;
+        }
+        else if (Input.GetAxis(playerBase.GetButtonName("LTrigger")) >= 0.5f && playerBase is Nurse && playerBase.canRez)
+        {
+            Combine();
+            return;
+        }
+        else if (Input.GetButtonDown(playerBase.GetButtonName("LB")))
+        {
+            Dodge();
+            return;
+        }
+        else if (Input.GetAxis(playerBase.GetButtonName("RTrigger")) >= 0.5f && !playerBase.RTPressed)
+        {
+            playerBase.RTPressed = true;
+            if (playerBase is Nurse)
+            {
+                if ((playerBase as Nurse).canGrab)
+                {
+                    (playerBase as Nurse).PickUp();
+                }
+                else if ((playerBase as Nurse).canInject)
+                {
+                    (playerBase as Nurse).Inject((playerBase as Nurse).heldItem.injection, (playerBase as Nurse).injectZone.GetTarget().GetComponent<PlayerBase>(), (playerBase as Nurse).injectZone);
+                }
+            }
 
+
+        }
+    }
 
     
 

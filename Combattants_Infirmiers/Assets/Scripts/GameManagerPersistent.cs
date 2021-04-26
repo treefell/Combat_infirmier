@@ -20,6 +20,11 @@ public class GameManagerPersistent : MonoBehaviour
 
     public int gameTimeMinutes;
     public int gameTimeSeconds;
+    public float shelfRefillTime;
+    public int healValue;
+    public float crateSpawnTime;
+    public float scoreIncrementSpeed;
+    public int deadBonus = 200;
 
     [HideInInspector]
     public int scoreA = 0;
@@ -73,7 +78,10 @@ public class GameManagerPersistent : MonoBehaviour
     public Sprite syringeEmpty;
     public Sprite syringeFull;
 
+    public Vector2 tirednessLevels;
 
+
+    
     [System.Serializable]
     public struct SpawnedObjectsProgression
     {
@@ -207,15 +215,16 @@ public class GameManagerPersistent : MonoBehaviour
     }
 
 
-    public void ScoreIncrement(GameObject deadGuy)
+    public void ScoreIncrement(GameObject deadGuy, int score)
     {
+        
         if (deadGuy == BoxerB)
         {
-            scoreA += 1;
+            scoreA += score;
         }
         else if(deadGuy == BoxerA)
         {
-            scoreB += 1;
+            scoreB += score;
         }
         scoreAText.text = "Score: "+scoreA;
         scoreBText.text = "Score: " + scoreB;

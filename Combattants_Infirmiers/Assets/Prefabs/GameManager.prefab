@@ -139,7 +139,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1782,6 +1782,7 @@ MonoBehaviour:
   timer: {fileID: 1272254865}
   gameTimeMinutes: 2
   gameTimeSeconds: 0
+  shelfRefillTime: 10
   scoreA: 0
   scoreAText: {fileID: 363166640}
   scoreB: 0
@@ -1796,7 +1797,7 @@ MonoBehaviour:
   hitlagTime: 0.05
   enemyHitstunTime: 1
   bufferingWindow: 10
-  playerStunTime: 5
+  playerStunTime: 3
   circleHitbox: {fileID: 5997178504623647033, guid: 3f309082135057e41beef2b119aaf03c, type: 3}
   squareHitbox: {fileID: 6314340631597066247, guid: 2cc79bd4ca25a5646b4dae33548f438d, type: 3}
   currentDifficulty: 5
@@ -1811,6 +1812,7 @@ MonoBehaviour:
   SyringeB: {fileID: 428452512}
   syringeEmpty: {fileID: 21300000, guid: 93124759e12143048b95663052bcf22a, type: 3}
   syringeFull: {fileID: 21300000, guid: 799beb3ca16811d4996e77ef8e6cb11b, type: 3}
+  tirednessLevels: {x: 5, y: 15}
   spawnedObjectsProgression:
   - spawnedObjects:
     - objectToSpawn: {fileID: 6981738464932817121, guid: 96102fa0a85e91641908c9f0227e85ba, type: 3}
@@ -1858,18 +1860,18 @@ MonoBehaviour:
       ignoreRotation: 0
     - objectToSpawn: {fileID: 6981738464932817121, guid: 96102fa0a85e91641908c9f0227e85ba, type: 3}
       frame: 1
-      position: {x: 0, y: 0, z: 50}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0.42261827, w: 0.90630776}
       ignoreRotation: 0
     - objectToSpawn: {fileID: 6981738464932817121, guid: 96102fa0a85e91641908c9f0227e85ba, type: 3}
       frame: 1
-      position: {x: 0, y: 0, z: -25}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -0.21643962, w: 0.976296}
       ignoreRotation: 0
     - objectToSpawn: {fileID: 6981738464932817121, guid: 96102fa0a85e91641908c9f0227e85ba, type: 3}
       frame: 1
-      position: {x: 0, y: 0, z: -50}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -0.42261827, w: 0.90630776}
       ignoreRotation: 0
   - spawnedObjects:
     - objectToSpawn: {fileID: 6981738464932817121, guid: e635e10310d736c4e8954268dd926ee1, type: 3}
@@ -1884,16 +1886,16 @@ MonoBehaviour:
       ignoreRotation: 0
     - objectToSpawn: {fileID: 6981738464932817121, guid: e635e10310d736c4e8954268dd926ee1, type: 3}
       frame: 1
-      position: {x: 0, y: 0, z: 50}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0.42261827, w: 0.90630776}
       ignoreRotation: 0
     - objectToSpawn: {fileID: 6981738464932817121, guid: e635e10310d736c4e8954268dd926ee1, type: 3}
       frame: 1
-      position: {x: 0, y: 0, z: -25}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -0.21643962, w: 0.976296}
       ignoreRotation: 0
     - objectToSpawn: {fileID: 6981738464932817121, guid: e635e10310d736c4e8954268dd926ee1, type: 3}
       frame: 1
-      position: {x: 0, y: 0, z: -50}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -0.42261827, w: 0.90630776}
       ignoreRotation: 0

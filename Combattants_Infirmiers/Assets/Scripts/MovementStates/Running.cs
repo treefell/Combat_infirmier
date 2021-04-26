@@ -20,16 +20,16 @@ public class Running : MovementState
             switch (playerBase.direction)
             {
                 case 4:
-                    playerBase.myAnimator.Play("Base Layer.WalkL");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("WalkL"));
                     break;
                 case 6:
-                    playerBase.myAnimator.Play("Base Layer.WalkR");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("WalkR"));
                     break;
                 case 2:
-                    playerBase.myAnimator.Play("Base Layer.WalkD");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("WalkD"));
                     break;
                 case 8:
-                    playerBase.myAnimator.Play("Base Layer.WalkU");
+                    playerBase.myAnimator.Play(playerBase.GetAnimName("WalkU"));
                     break;
 
             }
@@ -62,34 +62,8 @@ public class Running : MovementState
     void CheckInputs()
     {
 
-        
-       if (Input.GetButtonDown(playerBase.GetButtonName("RB")))
-        {
-            Attack(baseAttack);
-            return;
-        }
-        else if (/*Input.GetAxis(playerBase.GetButtonName("LTrigger")) >= 0.5f*/Input.GetButtonDown(playerBase.GetButtonName("Y")) && playerBase is Nurse && playerBase.canRez)
-        {
-            Combine();
-            return;
-        }
-        else if (Input.GetButtonDown(playerBase.GetButtonName("LB")))
-        {
-            Dodge();
-            return;
-        }
-        else if (Input.GetAxis(playerBase.GetButtonName("RTrigger")) >= 0.5f && playerBase is Nurse)
-        {
-            if ((playerBase as Nurse).canGrab)
-            {
-                (playerBase as Nurse).PickUp();
-            }
-            else if ((playerBase as Nurse).canInject)
-            {
-                (playerBase as Nurse).Inject((playerBase as Nurse).heldItem.injection, (playerBase as Nurse).injectZone.GetTarget().GetComponent<PlayerBase>(), (playerBase as Nurse).injectZone);
-            }
-
-        }
+       RunIdleInputs();
+       
 
 
 

@@ -151,6 +151,9 @@ MonoBehaviour:
   mySprite: {fileID: 7033186258949980952}
   myAnimator: {fileID: 195562197468684292}
   currentAttack: {fileID: 0}
+  tiredness: 0
+  RTPressed: 0
+  punch: {fileID: 8300000, guid: 3b6f5f0bbe086f74b8de7d8c2e848073, type: 3}
   heldItem: {fileID: 0}
   attackList: []
   canGrab: 0
