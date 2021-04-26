@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManagerPersistent : MonoBehaviour
 {
-
+    private int defaultTimer = 3;
     public static GameManagerPersistent Instance { get; private set; } // static so it can be called from anywhere
 
     public GameObject BoxerA;
@@ -80,7 +80,10 @@ public class GameManagerPersistent : MonoBehaviour
 
     public Vector2 tirednessLevels;
 
+    [HideInInspector]
+    public int[] ports = new int[] { 1, 2, 3, 4};
 
+    public GameObject hud;
     
     [System.Serializable]
     public struct SpawnedObjectsProgression
@@ -109,6 +112,7 @@ public class GameManagerPersistent : MonoBehaviour
 
     private void InitializeVar()
     {
+        
         scoreA = 0;
         scoreB = 0;
         scoreAText.text = "Score: " + scoreA;
@@ -122,12 +126,15 @@ public class GameManagerPersistent : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(ports[0].ToString() + ports[1].ToString() + ports[2].ToString() + ports[3].ToString());
         if (gameOver)
         {
             if (Input.GetButtonDown("A"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("Title");
                 Reset();
+                
+                hud.SetActive(false);
             }
         }
 
@@ -137,11 +144,11 @@ public class GameManagerPersistent : MonoBehaviour
     {
         if (scoreA > scoreB)
         {
-            gameOverScreen.GetComponentInChildren<Text>().text = "Team A Wins!";
+            gameOverScreen.GetComponentInChildren<Text>().text = "Blue Team Wins!";
         }
         else if (scoreB > scoreA)
         {
-            gameOverScreen.GetComponentInChildren<Text>().text = "Team B Wins!";
+            gameOverScreen.GetComponentInChildren<Text>().text = "Red Team Wins!";
         }
         else
         {
@@ -251,4 +258,33 @@ public class GameManagerPersistent : MonoBehaviour
             SyringeB.GetComponent<Image>().sprite = syringeEmpty;
         }
     }
+
+    public void SetControlledChar(ControlledChar chara, int port)
+    {
+        switch (chara)
+        {
+            case ControlledChar.BoxerA:
+                ports[0] = port;
+                break;
+            case ControlledChar.NurseA:
+                ports[1] = port;
+                break;
+            case ControlledChar.BoxerB:
+                ports[2] = port;
+                break;
+            case ControlledChar.NurseB:
+                ports[3] = port;
+                break;
+            
+            
+        }
+    }
+
+    public void ActivateHud()
+    {
+        hud.SetActive(true);
+    }
+
+
+
 }

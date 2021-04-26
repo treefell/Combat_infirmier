@@ -97,10 +97,12 @@ public class PlayerBase : TimeKeeper
             if (gameObject.layer == LayerMask.NameToLayer("TeamA"))
             {
                 GameManagerPersistent.Instance.NurseA = this.gameObject;
+                port = GameManagerPersistent.Instance.ports[1];
             }
             else if (gameObject.layer == LayerMask.NameToLayer("TeamB"))
             {
                 GameManagerPersistent.Instance.NurseB = this.gameObject;
+                port = GameManagerPersistent.Instance.ports[3];
             }
 
 
@@ -110,12 +112,15 @@ public class PlayerBase : TimeKeeper
             if (gameObject.layer == LayerMask.NameToLayer("TeamA"))
             {
                 GameManagerPersistent.Instance.BoxerA = this.gameObject;
+                port = GameManagerPersistent.Instance.ports[0];
             }
             else if (gameObject.layer == LayerMask.NameToLayer("TeamB"))
             {
                 GameManagerPersistent.Instance.BoxerB = this.gameObject;
+                port = GameManagerPersistent.Instance.ports[2];
             }
         }
+
         if (character.defaultAttack != null)
         {
             currentAttack = Instantiate(character.defaultAttack);
@@ -332,6 +337,11 @@ public class PlayerBase : TimeKeeper
     public void Sabotaged()
     { 
         
+    }
+
+    public void SabotagedHyper()
+    {
+
     }
 
     public string GetAnimName(string initialAnim)

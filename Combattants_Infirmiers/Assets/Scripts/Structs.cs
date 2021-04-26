@@ -8,8 +8,9 @@ public enum HitboxShape { Cube, Sphere };
 public enum ColliderState { Closed, Open, Colliding };
 public enum Iris {Red, Blue, Yellow, Green, Grey};
 
-public enum Injection { Crate, Hyperactive, Hadoken, Sabotage, Heal };
-
+public enum Injection { Crate, Hyperactive, Hadoken, Sabotage, Heal, SabotageHyper, SabotageHadoken };
+public enum TargetChoice {Player, Bed,Closet}
+public enum ControlledChar { NurseA, NurseB, BoxerA, BoxerB };
 
 
 [System.Serializable]

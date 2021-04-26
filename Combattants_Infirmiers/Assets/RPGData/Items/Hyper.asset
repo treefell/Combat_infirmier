@@ -15,3 +15,7 @@ MonoBehaviour:
   name: Hyper
   icon: {fileID: 21300000, guid: 22b11e7b74e34fa45bdea60666b76d9c, type: 3}
   injection: 1
+  canTargetBoxer: 1
+  canTargetNurse: 0
+  canTargetBed: 0
+  canTargetCloset: 0

@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -559, y: -73}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchoredPosition: {x: -677, y: -73}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &189805735
 CanvasRenderer:
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 150
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 568, y: -73}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchoredPosition: {x: 657, y: -73}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &363166641
 CanvasRenderer:
@@ -1783,6 +1783,10 @@ MonoBehaviour:
   gameTimeMinutes: 2
   gameTimeSeconds: 0
   shelfRefillTime: 10
+  healValue: 3
+  crateSpawnTime: 7
+  scoreIncrementSpeed: 50
+  deadBonus: 200
   scoreA: 0
   scoreAText: {fileID: 363166640}
   scoreB: 0
@@ -1813,6 +1817,8 @@ MonoBehaviour:
   syringeEmpty: {fileID: 21300000, guid: 93124759e12143048b95663052bcf22a, type: 3}
   syringeFull: {fileID: 21300000, guid: 799beb3ca16811d4996e77ef8e6cb11b, type: 3}
   tirednessLevels: {x: 5, y: 15}
+  ports: 01000000020000000300000004000000
+  hud: {fileID: 233810467}
   spawnedObjectsProgression:
   - spawnedObjects:
     - objectToSpawn: {fileID: 6981738464932817121, guid: 96102fa0a85e91641908c9f0227e85ba, type: 3}

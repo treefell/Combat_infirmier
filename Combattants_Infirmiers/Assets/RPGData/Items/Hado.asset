@@ -15,3 +15,7 @@ MonoBehaviour:
   name: Hadoken
   icon: {fileID: 21300000, guid: 799beb3ca16811d4996e77ef8e6cb11b, type: 3}
   injection: 2
+  canTargetBoxer: 1
+  canTargetNurse: 0
+  canTargetBed: 0
+  canTargetCloset: 0

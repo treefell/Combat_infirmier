@@ -15,3 +15,7 @@ MonoBehaviour:
   name: Crate
   icon: {fileID: 21300000, guid: 13fc672e4a89e2945b00c4890c56fece, type: 3}
   injection: 0
+  canTargetBoxer: 0
+  canTargetNurse: 0
+  canTargetBed: 0
+  canTargetCloset: 1

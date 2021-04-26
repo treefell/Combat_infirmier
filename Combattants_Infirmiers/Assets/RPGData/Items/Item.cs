@@ -10,7 +10,10 @@ public class Item : ScriptableObject
     new public string name = "newItem";
     public Sprite icon;
     public Injection injection;
-
+    public bool canTargetBoxer;
+    public bool canTargetNurse;
+    public bool canTargetBed;
+    public bool canTargetCloset;
 }
 
 

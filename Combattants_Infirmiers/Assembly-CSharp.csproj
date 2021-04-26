@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\MovementStates\Dodging.cs" />
     <Compile Include="Assets\SyringeZone.cs" />
     <Compile Include="Assets\Scripts\BlockBoxBehaviour.cs" />
+    <Compile Include="Assets\CrateSpawn.cs" />
     <Compile Include="Assets\Scripts\AttackManager.cs" />
     <Compile Include="Assets\Scripts\HpDisplay.cs" />
     <Compile Include="Assets\Timer.cs" />
@@ -99,12 +100,18 @@
     <Compile Include="Assets\Scripts\MovementStates\Healing.cs" />
     <Compile Include="Assets\Scripts\MovementStates\Idle.cs" />
     <Compile Include="Assets\Scripts\MovementStates\SwordSnap.cs" />
+    <Compile Include="Assets\Crate.cs" />
     <Compile Include="Assets\Scripts\RezZone.cs" />
     <Compile Include="Assets\Scripts\GameManagerPersistent.cs" />
     <Compile Include="Assets\Scripts\PlayerDetection.cs" />
     <Compile Include="Assets\Scripts\MovementStates\Combine.cs" />
-    <Compile Include="Assets\Crate.cs" />
-    <Compile Include="Assets\CrateSpawn.cs" />
+    <Compile Include="Assets\Scripts\menu\MenuBehaviour.cs" />
+    <Compile Include="Assets\TeamSelectZone.cs" />
+    <Compile Include="Assets\ZonesConfirm.cs" />
+    <Compile Include="Assets\ExitZone.cs" />
+    <Compile Include="Assets\TimeZone.cs" />
+    <Compile Include="Assets\Plus.cs" />
+    <Compile Include="Assets\Minus.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
