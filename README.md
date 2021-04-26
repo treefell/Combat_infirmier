@@ -17,7 +17,7 @@ Mechanics:
 	They have to be heal by the nurse when KO.
 	There is 2 type of buff which can be upgrade 5 times:
 		- hadoken which throw bullets, having 5 upgrade give a surprise.
-		- agility making the boxer do a step forward hiting and then backward
+		- Hyper making the boxer do a step forward hiting and then backward
 
  -Nurse:
 	Can heal and buff the boxers can only be stun for a moment.
