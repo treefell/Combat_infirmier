@@ -110,7 +110,7 @@ public class GameManagerPersistent : MonoBehaviour
         InitializeVar();
     }
 
-    private void InitializeVar()
+    public void InitializeVar()
     {
         
         scoreA = 0;
@@ -120,7 +120,7 @@ public class GameManagerPersistent : MonoBehaviour
         deadPlayers = 0;
         timer.currentMinutes = gameTimeMinutes;
         timer.currentSeconds = gameTimeSeconds;
-        
+        UpdateSyringe();
 
         
     }
@@ -164,11 +164,12 @@ public class GameManagerPersistent : MonoBehaviour
 
     private void Reset()
     {
+        
+        Time.timeScale = 1;
         InitializeVar();
         gameOver = false;
         gameOverScreen.SetActive(false);
         deadPlayers = 0;
-        Time.timeScale = 1;
     }
 
     
@@ -239,24 +240,31 @@ public class GameManagerPersistent : MonoBehaviour
 
     public void UpdateSyringe()
     {
-        if (NurseA.GetComponent<Nurse>().heldItem != null)
+        if (NurseA != null)
         {
-            SyringeA.GetComponent<Image>().sprite = NurseA.GetComponent<Nurse>().heldItem.icon;
-        }
-        else
-        {
-            SyringeA.GetComponent<Image>().sprite = syringeEmpty;
+            if (NurseA.GetComponent<Nurse>().heldItem != null)
+            {
+                SyringeA.GetComponent<Image>().sprite = NurseA.GetComponent<Nurse>().heldItem.icon;
+            }
+            else
+            {
+                SyringeA.GetComponent<Image>().sprite = syringeEmpty;
+            }
         }
 
 
-        if (NurseB.GetComponent<Nurse>().heldItem != null)
+        if (NurseB != null)
         {
-            SyringeB.GetComponent<Image>().sprite = NurseB.GetComponent<Nurse>().heldItem.icon;
+            if (NurseB.GetComponent<Nurse>().heldItem != null)
+            {
+                SyringeB.GetComponent<Image>().sprite = NurseB.GetComponent<Nurse>().heldItem.icon;
+            }
+            else
+            {
+                SyringeB.GetComponent<Image>().sprite = syringeEmpty;
+            }
         }
-        else
-        {
-            SyringeB.GetComponent<Image>().sprite = syringeEmpty;
-        }
+        
     }
 
     public void SetControlledChar(ControlledChar chara, int port)

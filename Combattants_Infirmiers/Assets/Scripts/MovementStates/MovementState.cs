@@ -143,11 +143,11 @@ public abstract class MovementState
             Combine();
             return;
         }
-        else if (Input.GetButtonDown(playerBase.GetButtonName("LB")))
+        /*else if (Input.GetButtonDown(playerBase.GetButtonName("LB")))
         {
             Dodge();
             return;
-        }
+        }*/
         else if (Input.GetAxis(playerBase.GetButtonName("RTrigger")) >= 0.5f && !playerBase.RTPressed)
         {
             playerBase.RTPressed = true;

@@ -17,6 +17,8 @@ public class Nurse : PlayerBase
     [HideInInspector]
     public bool canInject;
 
+    public GameObject syringeFeedback;
+
     public void Inject(Injection injection, PlayerBase target, SyringeZone zone)
     {
         switch (injection)
@@ -39,6 +41,8 @@ public class Nurse : PlayerBase
         injectZone.gameObject.SetActive(false);
         heldItem = null;
         canInject = false;
+
+        syringeFeedback.SetActive(false);
         GameManagerPersistent.Instance.UpdateSyringe();
         zone.playersInZone.Clear();
         zone.gameObject.SetActive(false);
@@ -58,8 +62,9 @@ public class Nurse : PlayerBase
             heldItem = armoire.items[(int)Random.Range(0, armoire.items.Length - 1)];
             
         }
-
-
+        syringeFeedback.SetActive(true);
+        syringeFeedback.GetComponent<SpriteRenderer>().sprite = heldItem.icon;
+        
         GameManagerPersistent.Instance.UpdateSyringe();
         canGrab = false;
         armoire.message.SetActive(false);
@@ -67,7 +72,10 @@ public class Nurse : PlayerBase
 
     public void GetCrate(Item crate)
     {
+        
         heldItem = crate;
+        syringeFeedback.SetActive(true);
+        syringeFeedback.GetComponent<SpriteRenderer>().sprite = heldItem.icon;
         GameManagerPersistent.Instance.UpdateSyringe();
     }
 

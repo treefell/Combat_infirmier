@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   name: Heal
-  icon: {fileID: 21300000, guid: b0f26209b3a2b0d469e4dc72ba05c644, type: 3}
+  icon: {fileID: 21300000, guid: 0e3ad790665901c4a849d7c16392b771, type: 3}
   injection: 4
   canTargetBoxer: 1
   canTargetNurse: 0
