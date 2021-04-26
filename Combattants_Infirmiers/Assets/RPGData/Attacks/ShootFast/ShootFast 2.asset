@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9adb87febe6f6549a27c6ee79aae258, type: 3}
+  m_Name: ShootFast 2
+  m_EditorClassIdentifier: 
+  name: ShootFast2
+  hits: []
+  totalFrames: 200
+  atkAnim: {fileID: 0}
+  detached: 0
+  ignoreRotation: 0
+  nextAttack: {fileID: 0}
+  cancellableFromFrame: 0
+  autoCombo: 0
+  isFinisher: 0
+  isSkill: 0
+  unblockable: 0
+  hitboxLoops: 0
+  addMovement: 0
+  movement: []
+  hitboxesIgnoreMovement: 0
+  addIntangibility: 0
+  intangibilityFrames: {x: 0, y: 0}
+  spawnObjects: 1
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 6981738464932817121, guid: 96102fa0a85e91641908c9f0227e85ba, type: 3}
+    frame: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    ignoreRotation: 0
